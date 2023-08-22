@@ -36,7 +36,7 @@ void main() {
   keivan.wallet.balance =
       transaction.transactionFunction(myStorage, keivan, [COETR, walkingDead]);
   User kiarash = new User("Kiarash", "Mahani", 22, Gender.male);
-  kiarash.wallet.addMoney(6985698569);
+  kiarash.wallet.addMoney(1000000000);
   kiarash.wallet.balance = transaction
       .transactionFunction(myStorage, kiarash, [harryNotPotter, COETR]);
 
