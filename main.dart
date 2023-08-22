@@ -10,7 +10,7 @@ void main() {
   Book harryPotter = new Book(2, 'Harry potter', 'Scholastic Corporation',
       "Joe lad", '7/8/1980', "658569", 800, 80000);
   Book walkingDead = new Book(3, 'Walking dead', 'Jane Smith', "Will smith",
-      '8/9/1965', "85867953", 650, 450000);
+      '8/9/1965', "85867953", 650, 45000);
   Book harryNotPotter = new Book(4, 'Harry not potter', 'Alice Johnson',
       "Imagine dragons", '6/9/1969', "2563482", 200, 20000);
 //---------------------------------------------------------------------
@@ -31,8 +31,14 @@ void main() {
   //myStorage.displayAllBooks();
 //----------------------------------------------------------------------
   Transaction transaction = new Transaction();
-  User keivan = User("keivan", "koupah", 28, Gender.male);
-  keivan.wallet.addMoney(20000000);
+  User keivan = new User("keivan", "koupah", 28, Gender.male);
+  keivan.wallet.addMoney(1500000);
   keivan.wallet.balance =
-      transaction.transactionFunction(myStorage, keivan, [COETR, harryPotter]);
+      transaction.transactionFunction(myStorage, keivan, [COETR, walkingDead]);
+  User kiarash = new User("Kiarash", "Mahani", 22, Gender.male);
+  kiarash.wallet.addMoney(6985698569);
+  kiarash.wallet.balance = transaction
+      .transactionFunction(myStorage, kiarash, [harryNotPotter, COETR]);
+
+  transaction.printTransactions();
 }

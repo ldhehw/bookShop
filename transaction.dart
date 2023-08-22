@@ -4,6 +4,25 @@ import 'book.dart';
 
 class Transaction {
   List<TransactionItem> trancs = [];
+
+  void printTransactions() {
+    if (trancs.isEmpty) {
+      print("No transactions recorded.");
+    } else {
+      print("List of Transactions:");
+      for (var i = 0; i < trancs.length; i++) {
+        print("Transaction ${i + 1}:");
+        print("  Date: ${trancs[i].date}");
+        print("  User: ${trancs[i].user.fullName()}");
+        print("  books:");
+        for (var book in trancs[i].books) {
+          print("  ${book.name}");
+        }
+        print("------");
+      }
+    }
+  }
+
   double transactionFunction(Storage storage, User user, List<Book> books) {
     int counter = 0;
     // print(books.length.toInt());
