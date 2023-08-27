@@ -35,13 +35,14 @@ void main() {
   keivan.wallet.addMoney(1500000);
   keivan.shoppingCart.booksInSP.add(COETR);
   keivan.shoppingCart.booksInSP.add(harryNotPotter);
-  keivan.wallet.balance =
-      transaction.transactionFunction(myStorage, keivan, keivan.shoppingCart);
-  // User kiarash = new User("Kiarash", "Mahani", 22, Gender.male);
-  // kiarash.shoppingCart.booksInSP.add(harryNotPotter);
-  // kiarash.wallet.addMoney(1000000000);
-  // kiarash.wallet.balance =
-  //     transaction.transactionFunction(myStorage, kiarash, kiarash.shoppingCart);
+  keivan.
+      //keivan.wallet.balance = transaction.transactionFunction(myStorage, keivan, keivan.shoppingCart);
+      // User kiarash = new User("Kiarash", "Mahani", 22, Gender.male);
+      // kiarash.shoppingCart.booksInSP.add(harryNotPotter);
+      // kiarash.wallet.addMoney(1000000000);
+      // kiarash.wallet.balance =
+      //     transaction.transactionFunction(myStorage, kiarash, kiarash.shoppingCart);
 
-  transaction.printTransactions();
+      transaction
+      .printTransactions();
 }

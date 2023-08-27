@@ -9,6 +9,7 @@ class User extends Person {
       : super(firstName, lastName, age, gender) {
     print("user created");
     wallet = new Wallet();
+    shoppingCart = new shopping_cart();
   }
 
   void user_display() {
@@ -31,7 +32,7 @@ class Wallet {
 }
 
 class shopping_cart {
-  late List<Book> booksInSP;
+  List<Book> booksInSP = [];
 
   bool availabilityCheck(List<Book> booksInSP, Storage storage) {
     int counter = 0;
@@ -46,7 +47,7 @@ class shopping_cart {
   }
 
   double price(List<Book> booksInSP, Storage storage) {
-    if (availabilityCheck(booksInSP, storage) == false) return -1;
+    if (!availabilityCheck(booksInSP, storage)) return -1;
     int counter = 0;
     double ABS = 0;
     while (counter < booksInSP.length) {
