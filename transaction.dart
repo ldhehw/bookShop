@@ -25,20 +25,21 @@ class Transaction {
 
   double transactionFunction(Storage storage, User user, shopping_cart SP) {
     int counter = 0;
-    if (SP.booksPrice == -1) return 0;
-    if (user.wallet.balance >= SP.booksPrice) {
+    if (SP.price(shopping_cart().booksInSP, storage) == -1) return 0;
+    if (user.wallet.balance >= SP.price(shopping_cart().booksInSP, storage)) {
       while (counter + 1 < SP.booksInSP.length) {
         storage.booksList.remove(SP.booksInSP[counter]);
         counter++;
       }
-      print("the total amount is ${SP.booksPrice}");
       print(
-          "remaining money in your wallet is ${user.wallet.balance - SP.booksPrice}");
+          "the total amount is ${SP.price(shopping_cart().booksInSP, storage)}");
+      print(
+          "remaining money in your wallet is ${user.wallet.balance - SP.price(shopping_cart().booksInSP, storage)}");
       trancs.add(new TransactionItem(SP.booksInSP, user, DateTime.now()));
-      return user.wallet.balance - SP.booksPrice;
+      return user.wallet.balance - SP.price(shopping_cart().booksInSP, storage);
     } else {
       print(
-          "you do not have enough money, the total amount is ${SP.booksPrice} and you have ${user.wallet.balance}");
+          "you do not have enough money, the total amount is ${SP.price(shopping_cart().booksInSP, storage)probl} and you have ${user.wallet.balance}");
       return user.wallet.balance;
     }
   }

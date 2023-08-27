@@ -32,7 +32,6 @@ class Wallet {
 
 class shopping_cart {
   late List<Book> booksInSP;
-  late double booksPrice;
 
   bool availabilityCheck(List<Book> booksInSP, Storage storage) {
     int counter = 0;
