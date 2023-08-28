@@ -33,12 +33,25 @@ class Wallet {
 
 class shopping_cart {
   List<Book> booksInSP = [];
+  void addBookFunction(Book book) {
+    booksInSP.add(book);
+    print("book ${book.name} had been added");
+    int counter = 0;
+    print("books in shopping cart:");
+    print("----------------------");
+    while (counter < booksInSP.length) {
+      print(booksInSP[counter].name);
+      counter++;
+    }
+    print("----------------------");
+  }
 
   bool availabilityCheck(List<Book> booksInSP, Storage storage) {
     int counter = 0;
     while (counter + 1 < booksInSP.length) {
       if (storage.stockCheck(booksInSP[counter]) == false) {
         print("sorry the book ${booksInSP[counter]} is not available");
+
         return false;
       }
       counter++;
@@ -46,12 +59,12 @@ class shopping_cart {
     return true;
   }
 
-  double price(List<Book> booksInSP, Storage storage) {
-    if (!availabilityCheck(booksInSP, storage)) return -1;
+  double price(List<Book> booksInSPs, Storage storage) {
+    if (!availabilityCheck(booksInSPs, storage)) return -1;
     int counter = 0;
     double ABS = 0;
-    while (counter < booksInSP.length) {
-      ABS += booksInSP[counter].price;
+    while (counter < booksInSPs.length) {
+      ABS += booksInSPs[counter].price;
       counter++;
     }
     return ABS;

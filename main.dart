@@ -33,16 +33,16 @@ void main() {
   Transaction transaction = new Transaction();
   User keivan = new User("keivan", "koupah", 28, Gender.male);
   keivan.wallet.addMoney(1500000);
-  keivan.shoppingCart.booksInSP.add(COETR);
-  keivan.shoppingCart.booksInSP.add(harryNotPotter);
-  keivan.
-      //keivan.wallet.balance = transaction.transactionFunction(myStorage, keivan, keivan.shoppingCart);
-      // User kiarash = new User("Kiarash", "Mahani", 22, Gender.male);
-      // kiarash.shoppingCart.booksInSP.add(harryNotPotter);
-      // kiarash.wallet.addMoney(1000000000);
-      // kiarash.wallet.balance =
-      //     transaction.transactionFunction(myStorage, kiarash, kiarash.shoppingCart);
+  keivan.shoppingCart.addBookFunction(COETR);
+  keivan.shoppingCart.addBookFunction(harryNotPotter);
+  keivan.wallet.balance =
+      transaction.transactionFunction(myStorage, keivan, keivan.shoppingCart);
 
-      transaction
-      .printTransactions();
+  // User kiarash = new User("Kiarash", "Mahani", 22, Gender.male);
+  // kiarash.shoppingCart.booksInSP.add(harryNotPotter);
+  // kiarash.wallet.addMoney(1000000000);
+  // kiarash.wallet.balance =
+  //     transaction.transactionFunction(myStorage, kiarash, kiarash.shoppingCart);
+
+  transaction.printTransactions();
 }
